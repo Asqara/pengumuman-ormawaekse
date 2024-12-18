@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+body{
+    font-family: "Open Sans", serif;
+    font-optical-sizing: auto;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: #fcfcfc;
+    color: rgb(0, 0, 0);
+}
+nav{
+    background: linear-gradient(90deg, #2A6DF5, #87CEFA);
+    padding: 20px;
+    display: block;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+}
+.container {
+    margin-top: 10em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-grow: 1;
+}
+
+
+.data-title {
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #000000;
+}
+
+.data-subtitle {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    color: #000000;
+}
+
+.data-info {
+    font-size: 1.2rem;
+    color: #020101;
+}
+.footer {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #000000;
+}
+.nav-lulus {
+    background: linear-gradient(90deg, #2A6DF5, #87CEFA); /* Biru */
+}
+
+.nav-tidak-lulus {
+    background: linear-gradient(90deg, #a71616, #b24949); /* Merah */
+}
+
+/* Media Query untuk Tablet (ukuran layar maks 768px) */
+@media (max-width: 768px) {
+    .container {
+        margin-top: 5em; /* Kurangi margin atas agar tampil lebih rapi */
+    }
+
+    .content-box {
+        padding: 20px; /* Kurangi padding agar sesuai ukuran layar */
+        max-width: 90%; /* Gunakan hampir seluruh lebar layar */
+    }
+
+    .data-title {
+        font-size: 2.5rem; /* Kurangi ukuran font agar lebih proporsional */
+    }
+
+    .data-subtitle {
+        font-size: 1.3rem; 
+    }
+
+    .data-info {
+        font-size: 1rem;
+    }
+}
+
+/* Media Query untuk HP (ukuran layar maks 480px) */
+@media (max-width: 480px) {
+    nav{
+        font-size: 1em;
+        padding: 10px; /* Kurangi padding agar sesuai ukuran layar */
+    }
+    .info{
+        font-size: 0.7em; /* Kurangi ukuran font agar lebih proporsional */
+        margin-bottom: 5px; /* Kurangi margin bawah agar sesuai ukuran layar */
+    }
+    .container {
+        margin-top: 3em; /* Lebih kecil lagi di HP */
+    }
+
+    .content-box {
+        padding: 15px; /* Lebih kecil lagi padding */
+        border-radius: 10px; /* Kurangi border radius */
+        width: 95%; /* Gunakan hampir seluruh lebar layar */
+    }
+
+    .data-title {
+        font-size: 2rem; /* Font lebih kecil agar tetap pas */
+    }
+
+    .data-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .data-info {
+        font-size: 0.9rem;
+    }
+
+    .footer {
+        font-size: 0.8rem; /* Footer lebih kecil */
+    }
+}

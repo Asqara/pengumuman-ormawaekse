@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasil Kelulusan</title>
+    <link rel="stylesheet" href="style-hasil.css">
+</head>
+<body>
+    <nav id="navbar">
+        <div id="pengumuman">
+            <h1 id="judul-pengumuman"></h1>
+        </div>
+        <div id="info">
+            <p id="sub-pengumuman"></p>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="content-box">
+            <div class="data-title" id="nama"></div>
+            <div class="data-subtitle" id="nim"></div>
+            <div class="data-info" id="pilihan">Pilihan : </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p id="selamat"></p>
+    </div>
+    <script>
+        // Ambil data dari localStorage
+        const data = JSON.parse(localStorage.getItem("hasilKelulusan"));
+        const nav = document.getElementById("navbar");
+        const judulPengumuman = document.getElementById("judul-pengumuman");
+        const subPengumuman = document.getElementById("sub-pengumuman");
+
+        // Tampilkan data di halaman
+        if (data) {
+            // Menampilkan data
+            document.getElementById("nama").textContent = data.nama ;
+            document.getElementById("nim").textContent = "NIM : " + data.nim ;
+            document.getElementById("pilihan").textContent = "Biro/Departemen : " + data.pilihan;
+            
+
+            // Menentukan status kelulusan
+            if (data.status === "LULUS") {
+                document.getElementById("selamat").textContent = "Selamat, Anda dinyatakan LULUS!";
+                nav.classList.add("nav-lulus");
+                judulPengumuman.textContent = "SELAMAT ANDA DINYATAKAN LULUS SELEKSI WAWANCARA ORMAWA EKSEKUTIF PKU";
+                subPengumuman.textContent = "Selamat bergabung dengan kami";
+                if(data.pilihan==="Biro Riset Pengembangan"){
+                    document.getElementById("selamat").textContent = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.🥰🥰🥰🥰";
+                }
+            } else {
+                document.getElementById("selamat").textContent = "Maaf, Anda tidak lulus. Coba lagi tahun depan!";
+                nav.classList.add("nav-tidak-lulus");
+                judulPengumuman.textContent = "MOHON MAAF ANDA DINYATAKAN TIDAK LULUS SELEKSI WAWANCARA ORMAWA EKSEKUTIF PKU";
+                subPengumuman.textContent = "Anda belum berhasil kali ini.";
+                if(data.pilihan==="Biro Riset Pengembangan"){
+                    document.getElementById("selamat").textContent = "oh nooooo tdk lulus";
+                }
+            }
+        } else {
+            // Jika data tidak ada di localStorage
+            document.body.innerHTML = "<h2>Data tidak ditemukan. Silakan kembali ke halaman utama.</h2>";
+        }
+    </script>
+</body>
+</html>
