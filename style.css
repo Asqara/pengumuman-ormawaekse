@@ -1,47 +1,89 @@
-body {
-    font-family: Arial, sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: #f8f9fa;
-    text-align: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #6C63FF, #4A90E2);
+    padding: 20px;
 }
 
 .container {
-    background: #ffffff;
-    padding: 20px 30px;
+    background: #fff;
+    padding: 30px 40px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
 }
 
-h1 {
+.container h2 {
+    margin-bottom: 20px;
     color: #333;
 }
 
-input, button {
-    padding: 10px;
-    margin-top: 10px;
+.container p {
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.container input {
+    width: 100%;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
     font-size: 16px;
 }
 
-input {
-    width: 80%;
-    max-width: 400px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+.container input:focus {
+    border-color: #6C63FF;
+    outline: none;
+    box-shadow: 0 0 5px rgba(108, 99, 255, 0.5);
 }
 
-button {
-    background-color: #286fbb;
-    color: white;
+.container button {
+    width: 100%;
+    padding: 12px;
+    background: #6C63FF;
     border: none;
     border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
     cursor: pointer;
+    transition: background 0.3s;
+}
+
+.container button:hover {
+    background: #4A90E2;
+}
+
+.container small {
+    display: block;
+    margin-top: 10px;
+    color: #aaa;
 }
 
 button:hover {
     background-color: #388cd0;
+}
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+    }
+
+    .container h2 {
+        font-size: 20px;
+    }
+
+    .container button {
+        font-size: 14px;
+    }
 }

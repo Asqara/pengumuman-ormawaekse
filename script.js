@@ -2,7 +2,7 @@
 const dataKelulusan = [
     { nim: "12345678", nama: "Budi Santoso", status: "LULUS",pilihan : "Biro Riset Pengembangan" },
     { nim: "M0401241104", nama: "Fitria Angelita Delvi", status: "LULUS",pilihan : "Biro Riset Pengembangan" },
-    { nim: "11112222", nama: "Siti Aminah", status: "LULUS" ,pilihan : "Risbang" }
+    { nim: "11112222", nama: "Siti Aminah", status: "TIDAK LULUS" ,pilihan : "Risbang" }
 ];
 
 // Fungsi untuk mengecek kelulusan
